@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CustomerModel>
+@{
+    ViewData["Title"] = "All Customers";
+}
+
+<h2>All Customers</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>BirthDate</th>
+            <th>Is Young Driver</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.BirthDate.ToShortDateString()
+                </td>
+                <td>
+                    @(item.IsYoungDriver ? "Yes":"No")
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
