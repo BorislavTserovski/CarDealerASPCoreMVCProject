@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SupplierModel>
+@{
+    ViewData["Title"] = "All Suppliers By Parts Origin";
+}
+
+<h2>All Suppliers By Parts Origin</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Name</th>
+            <th>Parts in inventory</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.CountOfParts
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

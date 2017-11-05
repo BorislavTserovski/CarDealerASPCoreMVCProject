@@ -1,0 +1,33 @@
+﻿@model  IEnumerable<CarModel>
+@{
+    ViewData["Title"] = "All Cars By Make";
+}
+
+<h2>All Cars By Make</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Travelled Distance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Make
+                </td>
+                <td>
+                    @item.Model
+                </td>
+                <td>
+                    @(item.TravelledDistance)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

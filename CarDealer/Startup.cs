@@ -23,7 +23,7 @@ namespace CarDealer
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CarDealerDbContext>(options =>
@@ -33,14 +33,16 @@ namespace CarDealer
                 .AddEntityFrameworkStores<CarDealerDbContext>()
                 .AddDefaultTokenProviders();
 
-            // Add application services.
+           
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<ICarService, CarService>();
+            services.AddTransient<ISupplierService, SupplierService>();
 
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
