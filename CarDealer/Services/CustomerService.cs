@@ -47,5 +47,19 @@ namespace CarDealer.Services
             }
             else return new List<CustomerModel>();
         }
+
+        public CustomerWithCarsModel CustomerWithCars(int id)
+        {
+            var result = db.Customers.Where(c => c.Id == id).Select(c => new CustomerWithCarsModel
+            {
+                Id = c.Id,
+                Name = c.Name,
+                CarsBought = c.Sales.Count,
+                MoneySpent = c.Sales.Sum(s => s.Car.Parts.Sum(p => p.Part.Price))
+
+            }).FirstOrDefault();
+
+            return result;
+        }
     }
 }

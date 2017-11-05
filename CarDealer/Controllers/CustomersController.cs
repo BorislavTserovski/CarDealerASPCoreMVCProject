@@ -22,5 +22,11 @@ namespace CarDealer.Controllers
         {
             return View(this.customers.All(order));
         }
+
+        [Route("/customers/{id}")]
+        public IActionResult CustomersSales(int id)
+        {
+            return View(this.customers.CustomerWithCars(id));
+        }
     }
 }
