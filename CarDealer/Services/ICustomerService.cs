@@ -11,5 +11,11 @@ namespace CarDealer.Services
         IEnumerable<CustomerModel> All(string order);
 
         CustomerWithCarsModel CustomerWithCars(int id);
+
+        void Add(string name, DateTime birthDate);
+
+        CustomerModel Edit(int id);
+
+        void Edit(int id,CustomerModel model);
     }
 }

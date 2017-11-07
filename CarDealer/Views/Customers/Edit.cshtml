@@ -1,0 +1,14 @@
+﻿@model  CustomerModel
+@{
+    ViewData["Title"] = "Edit";
+}
+<h2>Edit Customer</h2>
+<form method="post">
+    Name:
+    <input type="text" name="name" value="@Model.Name" />
+    <br />
+    BirthDate:
+    <input type="date" name="birthDate"/>
+    <br />
+  <input type="submit" value="Edit" />
+</form>

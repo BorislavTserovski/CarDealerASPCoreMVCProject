@@ -1,0 +1,23 @@
+﻿@model PartModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add a Part</h2>
+
+<form method="post">
+    Name:
+    <input type="text" name="name" />
+    <br />
+    Price:
+    <input type="number" name="price" min="1" step="0.1" value="10.0" />
+    <br />
+    Supplier:
+    <input type="text" name="supplierName" />
+    <br/>
+    Quantity:
+    <input type="number" name="quantity" min="1" value="1" />
+
+    <input type="submit" value="Add" />
+</form>
+
